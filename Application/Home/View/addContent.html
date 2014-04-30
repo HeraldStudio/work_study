@@ -1,0 +1,56 @@
+<table class="table table-hover" id="infoTable">
+  <tr class="success">
+    <th id="wId"><strong>#</strong></th>
+    <th id="wDescribe"><strong>工作描述</strong></th>
+    <th id="wPlace"><strong>地点</strong></th>
+    <th id="wTime"><strong>工作时间</strong></th>
+    <th id="wSalary"><strong>薪水</strong></th>
+    <th id="wPubTime"><strong>发布时间</strong></th>
+    <th id="wStatus"><strong>招聘状态</strong></th>
+    <th id="wDelete"><strong>删除</strong></th>
+  </tr>
+
+<?php
+	for($i=0; $i<20 && $i<count($sqlArray); $i++){
+?>
+	  <tr>
+	    <td>{$sqlArray[$i][work_id]}</td>
+	    <td>{$sqlArray[$i][work_describe]}</td>
+	    <td>{$sqlArray[$i][work_place]}</td>
+	    <td>{$sqlArray[$i][work_time]}</td>
+	    <td>{$sqlArray[$i][work_salary]}</td>
+	    <td>{$sqlArray[$i][publish_time]}</td>
+	    <td>
+	      <button type="pick" infoid="2" class="btn btn-sm btn-success">
+	        <span class="glyphicon glyphicon-ok"></span> 招 满
+	      </button>
+	    </td>
+	    <td>
+	      <button type="pick" infoid="2" class="btn btn-sm btn-danger">
+	        <span class="glyphicon glyphicon-remove"></span> 删 除
+	      </button>
+	    </td>
+	  </tr>
+
+<?php
+	}
+?>
+
+    <center>
+      <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+    </center>
+
+
+</table>
+
+
+
+

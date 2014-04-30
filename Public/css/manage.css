@@ -1,0 +1,166 @@
+body,html
+{
+	margin:0;
+	padding:0;
+	height: 100%;
+}
+
+body
+{
+	background-image:url(../img/dust.png);
+}
+
+#headnav
+{
+	margin-left: 10%;
+}
+
+#headnav a:hover
+{
+	color:#1E90FF;
+}
+
+#container
+{
+	min-height: 100%;
+	height:auto;
+	padding-bottom: 105px;
+}
+
+#foot
+{
+	position: relative;
+	margin-top: -90px;
+	height:80px;
+	width:100%;
+	background-color:#FFFFFF;
+	-webkit-box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+}
+
+#foot h5
+{
+	text-align:center;
+	color:#666;
+	padding-top:25px;
+}
+
+
+#publish,
+#manage,
+#logout
+{
+	cursor: pointer;
+}
+
+#logout a:hover
+{
+	color:#1E90FF;
+}
+
+#logout
+{
+	margin-right: 30px;
+}
+
+//登录窗口
+#pleaseLogin
+{
+	text-align:center;
+	margin-top: 0;
+}
+
+#logWindow
+{
+	margin:20px auto 0;
+	width:450px;
+	height:320px;
+	background-color:white;
+	border-radius: 5px;
+	border:1px solid #428bca;
+}
+
+#logHead
+{
+	height:60px;
+	width:100%;
+	background-color: #428bca;
+}
+
+#logHead h2
+{
+	margin-top: 0px;
+	text-align:center;
+	padding-top: 15px;
+	font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,
+		"Hiragino Sans GB","Hiragino Sans GB W3","Microsoft YaHei UI","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+	color: white;
+}
+
+#loginForm
+{
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 30px;
+	margin-bottom: 0px;
+}
+
+.loginInput
+{
+	width:200px;
+	float:left;
+}
+
+#login{
+	width:50%;
+	margin-left: 25%;
+}
+//登录窗口
+
+#wId
+{
+	width: 30px;
+}
+
+#wDescribe
+{
+	//min-width:400px;
+	width:350px;
+}
+
+#wPlace
+{
+	//max-width: 80px;
+	width: 150px;
+}
+#wTime
+{
+	width: 200px;
+}
+#wSalary
+{
+	width: 120px;
+}
+#wPubTime
+{
+	width: 150px;
+}
+#wStatus
+{
+	width: 50px;
+}
+#wDelete
+{
+	width: 50px;
+}
+
+/*#infoTable
+{
+	margin-left: 20px;
+	margin-right: 20px;
+}*/
+.pagination li
+{
+	cursor: pointer;
+}
