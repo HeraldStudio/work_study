@@ -15,7 +15,7 @@ function publish(){
 	};
 
 	$.ajax({
-		url: 'index.php/Home/Index/publish',
+		url: 'index.php/Index/publish',
 		type:'post',
 		dataType:'json',
 		data: postJson,
@@ -52,7 +52,8 @@ function login(){
 	};
 
 	$.ajax({
-		url: 'index.php/Home/Index/login',
+		//url: 'index.php/Manage/Index/login',
+		url: 'index.php/Index/login',
 		type:'post',
 		dataType:'json',
 		data: postJson,
@@ -97,7 +98,7 @@ function loadItems(page){	//page代表加载第几页
 	};
 
 	$.ajax({
-		url: 'index.php/Home/Index/addContent',
+		url: 'index.php/Index/addContent',
 		type:'post',
 		dataType:'json',
 		data: postJson,
@@ -123,7 +124,7 @@ function deleteItem(id){
 		"deleteId": id
 	};
 	$.ajax({
-		url: 'index.php/Home/Index/deleteItem',
+		url: 'index.php/Index/deleteItem',
 		type:'post',
 		dataType:'json',
 		data: postJson,
@@ -147,7 +148,7 @@ function itemStatus(id){
 		"itemId": id
 	};
 	$.ajax({
-		url: 'index.php/Home/Index/itemStatus',
+		url: 'index.php/Index/itemStatus',
 		type:'post',
 		dataType:'json',
 		data: postJson,

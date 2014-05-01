@@ -10,8 +10,8 @@ function loadContent(){
 		"addCount": addCount
 	};
 	$.ajax({
-		//url: 'index.php/Home/Show/addContent',
-		url: 'addContent',
+		url: 'index.php/Home/Index/addContent',
+		//url: 'addContent',
 		type:'post',
 		dataType:'json',
 		data: postJson,
