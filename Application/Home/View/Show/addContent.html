@@ -1,0 +1,13 @@
+<?php
+	for($i=0; $i<count($sqlArray); $i++){
+?>
+
+<li data-role="list-divider">{$sqlArray[$i]["work_summary"]}</li>
+<li>描述：{$sqlArray[$i]["work_describe"]}</li>
+<li>时间：{$sqlArray[$i]["work_time"]}</li>
+<li>地点：{$sqlArray[$i]["work_place"]}</li>
+<li>薪金：{$sqlArray[$i]["work_salary"]}</li>
+
+<?php
+}
+?>

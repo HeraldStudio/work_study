@@ -7,6 +7,7 @@ jQuery(document).ready(function(){
 
 function publish(){
 	var postJson={
+		"workSummary" : $("#workSummary").val(),
 		"workDescribe" : $("#workDescribe").val(),
 		"workPlace" : $("#workPlace").val(),
 		"workTime" : $("#workTime").val(),
@@ -19,21 +20,22 @@ function publish(){
 		dataType:'json',
 		data: postJson,
 		success:function(data){
-			if(data.status==1){
+			if(data.status==0){
 				var tip='<div class="alert alert-success" id="publishTip">发布成功</div>';
 				$("#publishBody").append(tip);
 				setTimeout(function(){
 					$("#publishModal").modal('hide');
 					$("#publishTip").remove();
-				},500);
+				},300);
+				$("#workSummary").val("");
 				$("#workDescribe").val("");
 				$("#workPlace").val("");
 				$("#workTime").val("");
 				$("#workSalary").val("");
 				loadItems(currentPage);
-			}else if(data.status==2){
+			}else if(data.status==1){
 				alert("很抱歉，发布失败");
-			}else if(data.status==3){
+			}else if(data.status==2){
 				alert("您尚未登录，请先登录");
 			}
 		},
@@ -55,13 +57,13 @@ function login(){
 		dataType:'json',
 		data: postJson,
 		success:function(data){
-			if(data.status==1){
+			if(data.status==0){
 				$("#pleaseLogin").removeClass("alert-danger");
 				$("#pleaseLogin").addClass("alert-success");
 				$("#pleaseLogin").html("登陆成功");
 				setTimeout(function(){
 					loadItems(1)
-				},500);
+				},300);
 			}else{
 				$("#pleaseLogin").html("登陆失败");
 			}
@@ -89,7 +91,7 @@ function addFunction(){
 	});
 }
 
-function loadItems(page){
+function loadItems(page){	//page代表加载第几页
 	var postJson={
 		"page":page
 	};
@@ -100,12 +102,12 @@ function loadItems(page){
 		dataType:'json',
 		data: postJson,
 		success:function(data){
-			if(data.status==1){
+			if(data.status==0){
 				$("#main").html(data.content);
 				addFunction();
 			}else if(data.status==2){
-				alert("登录失败");
-			}else if(data.status==3){
+				alert("您尚未登录，请先登录");
+			}else if(data.status==1){
 				alert("加载失败");
 			}
 			currentPage=page;
@@ -126,10 +128,12 @@ function deleteItem(id){
 		dataType:'json',
 		data: postJson,
 		success:function(data){
-			if(data.status){
+			if(data.status==true){
 				loadItems(currentPage);
-			}else{
+			}else if(data.status==false){
 				alert("很抱歉，删除失败");
+			}else{
+				alert("您尚未登录，请先登录");
 			}
 		},
 		error:function(){
@@ -148,19 +152,21 @@ function itemStatus(id){
 		dataType:'json',
 		data: postJson,
 		success:function(data){
-			if(data.status){
-				if(data.newStatus==true){
-					var newContent='<span class="glyphicon glyphicon-pause"></span>已经招满';
+			if(data.status==true){
+				if(data.newItemStatus==true){
+					var newContent='<span class="glyphicon glyphicon-pause"></span>&nbsp已经招满';
 					$(".statusBtn."+id).removeClass("btn-success");
 					$(".statusBtn."+id).addClass("btn-default");
 				}else{
-					var newContent='<span class="glyphicon glyphicon-ok"></span>正在招聘';
+					var newContent='<span class="glyphicon glyphicon-ok"></span>&nbsp正在招聘';
 					$(".statusBtn."+id).removeClass("btn-default");
 					$(".statusBtn."+id).addClass("btn-success");
 				}
 				$(".statusBtn."+id).html(newContent);
-			}else{
+			}else if(data.newStatus==false){
 				alert("很抱歉，删除失败");
+			}else{
+				alert("您尚未登录，请先登录");
 			}
 		},
 		error:function(){

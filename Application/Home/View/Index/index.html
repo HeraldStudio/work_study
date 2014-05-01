@@ -58,6 +58,12 @@
         <!-- Modal-body -->
           <form class="form-horizontal" role="form">
             <div class="form-group">
+              <label for="workSummary" class="col-sm-3 control-label">工作摘要:</label>
+              <div class="col-sm-8">
+                <input type="text" id="workSummary" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
               <label for="workDescribe" class="col-sm-3 control-label">工作描述:</label>
               <div class="col-sm-8">
                 <textarea id="workDescribe" class="form-control" rows="4"></textarea>

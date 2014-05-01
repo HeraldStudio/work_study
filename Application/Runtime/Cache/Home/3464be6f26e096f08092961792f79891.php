@@ -1,6 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><table class="table table-hover" id="infoTable">
   <tr class="success">
     <th id="wId"><strong>#</strong></th>
+    <th id="wSummary"><strong>工作摘要</strong></th>
     <th id="wDescribe"><strong>工作描述</strong></th>
     <th id="wPlace"><strong>地点</strong></th>
     <th id="wTime"><strong>工作时间</strong></th>
@@ -14,6 +15,7 @@
  for($i=0; $i<20 && $i<count($sqlArray); $i++){ ?>
 	  <tr>
 	    <td><?php echo ($sqlArray[$i]["work_id"]); ?></td>
+	    <td><?php echo ($sqlArray[$i]["work_summary"]); ?></td>
 	    <td><?php echo ($sqlArray[$i]["work_describe"]); ?></td>
 	    <td><?php echo ($sqlArray[$i]["work_place"]); ?></td>
 	    <td><?php echo ($sqlArray[$i]["work_time"]); ?></td>
@@ -23,19 +25,19 @@
 	    	<?php
  if($sqlArray[$i]["finish"]){ ?>
 				<button type="pick" class="btn btn-sm btn-default statusBtn <?php echo ($sqlArray[$i]['work_id']); ?>" id='<?php echo ($sqlArray[$i]["work_id"]); ?>'>
-					<span class="glyphicon glyphicon-pause"></span>已经招满
+					<span class="glyphicon glyphicon-pause"></span>&nbsp已经招满
 				</button>
 			<?php
  }else{ ?>
 				<button type="pick" class="btn btn-sm btn-success statusBtn <?php echo ($sqlArray[$i]['work_id']); ?>" id='<?php echo ($sqlArray[$i]["work_id"]); ?>'>
-					<span class="glyphicon glyphicon-ok"></span>正在招聘
+					<span class="glyphicon glyphicon-ok"></span>&nbsp正在招聘
 				</button>
 			<?php
  } ?>			
 	    </td>
 	    <td>
 			<button type="pick" class="btn btn-sm btn-danger deleteBtn" id='<?php echo ($sqlArray[$i]["work_id"]); ?>'>
-				<span class="glyphicon glyphicon-remove"></span> 删 除
+				<span class="glyphicon glyphicon-remove"></span>&nbsp删 除
 			</button>
 	    </td>
 	  </tr>
